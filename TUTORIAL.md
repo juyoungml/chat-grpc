@@ -94,7 +94,6 @@ service ChatService {
 * `SendMessage`: like mailing one message.
 * `StreamMessages`: like tuning into a radio station that keeps broadcasting.
 
----
 
 ### Step 2: Generate Python Code
 
@@ -109,7 +108,6 @@ This creates:
 * `chat_pb2.py`: **the dictionary of allowed message types**
 * `chat_pb2_grpc.py`: **the instructions on how to use them**
 
----
 
 ### Step 3: Implement the gRPC Server
 
@@ -125,7 +123,6 @@ class ChatServiceServicer(chat_pb2_grpc.ChatServiceServicer):
 * **SendMessage**: when someone speaks, add it to the log, then announce to the room.
 * **StreamMessages**: when someone enters, replay recent history, then keep feeding new lines live.
 
----
 
 ### Step 4: Create the FastAPI Bridge
 
@@ -175,7 +172,6 @@ ws.onmessage = (event) => {
 };
 ```
 
----
 
 ## Understanding the Code
 
@@ -191,7 +187,7 @@ ws.onmessage = (event) => {
 
 It’s like passing a note in class, but the teacher (server) makes sure everyone gets a copy.
 
----
+
 
 ### Threading and Queues
 
@@ -200,7 +196,7 @@ Servers can get overwhelmed if 100 people talk at once. That’s why:
 * gRPC uses **threads** → like having multiple baristas so no one waits too long.
 * A **message queue** ensures order → like putting all coffee orders on a rail so baristas handle them in sequence.
 
----
+
 
 ### WebSocket Connection Manager
 
@@ -212,7 +208,7 @@ self.active_connections: Dict[str, WebSocket] = {}
 
 Like a guest list at a party, so the host knows who to pass messages to.
 
----
+
 
 ## Running and Testing
 
@@ -246,7 +242,7 @@ INFO:     Uvicorn running on http://0.0.0.0:8000
 INFO:     WebSocket connection accepted
 ```
 
----
+
 
 ## Advanced Concepts
 
@@ -372,7 +368,7 @@ You now have a **real-time, production-ready chat**:
 
 From here, you could extend into video calls, file sharing, or mobile apps.
 
----
+
 
 ## Glossary (Beginner-Friendly)
 
