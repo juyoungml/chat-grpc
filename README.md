@@ -2,6 +2,8 @@
 
 An educational online chat application demonstrating the integration of gRPC, FastAPI, WebSockets, and raw HTML.
 
+TODO: Reimplement with [Connect RPC](https://connectrpc.com/)
+
 ## Quick Start
 
 ```bash
